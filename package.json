@@ -4,15 +4,27 @@
   "description": "API wrapper for cryptowat.ch",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava",
     "build": "babel src -d dist",
     "prepublish": "npm run build"
   },
   "author": "Amanvir Sangha <amanvir.sangha@gmail.com> (https://amanvir.io)",
   "license": "ISC",
   "devDependencies": {
+    "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
-    "babel-preset-env": "^1.1.4"
+    "babel-preset-env": "^1.1.4",
+    "nock": "^9.0.2"
   },
-  "presets": ["env"]
+  "presets": [
+    "env"
+  ],
+  "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
+  },
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "request": "^2.79.0"
+  }
 }

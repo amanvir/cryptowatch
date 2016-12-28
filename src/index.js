@@ -1,12 +1,15 @@
-import { fetch } from 'isomorphic-fetch'
+import fetch from 'node-fetch'
 
 export default class Cryptowatch {
-  constructor(){
-    this.url = 'https://api.cryptowatch.com'
+
+  constructor() {
+    this.url = 'https://api.cryptowatch.com/'
   }
 
-  getPrice(currency) {
-    return fetch(this.url + '/xyz')
+  allowance() {
+    return fetch(this.url)
+      .then(r => { return r.json() })
+      .then(r => { return r.allowance.remaining })
   }
 
 }
