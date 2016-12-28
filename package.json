@@ -14,6 +14,10 @@
     "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
     "babel-preset-env": "^1.1.4",
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
     "nock": "^9.0.2"
   },
   "presets": [

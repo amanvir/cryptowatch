@@ -2,14 +2,13 @@ import fetch from 'node-fetch'
 
 export default class Cryptowatch {
 
-  constructor() {
+  constructor () {
     this.url = 'https://api.cryptowatch.com/'
   }
 
-  allowance() {
+  allowance () {
     return fetch(this.url)
       .then(r => { return r.json() })
       .then(j => { return j.allowance })
   }
-
 }
