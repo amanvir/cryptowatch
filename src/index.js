@@ -9,7 +9,7 @@ export default class Cryptowatch {
   allowance() {
     return fetch(this.url)
       .then(r => { return r.json() })
-      .then(r => { return r.allowance.remaining })
+      .then(j => { return j.allowance })
   }
 
 }

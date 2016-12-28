@@ -14,8 +14,14 @@ test('it gets correct allowance result', t => {
   nock('https://api.cryptowatch.com')
     .get('/')
     .reply(200, 
-      {"allowance":{"cost":16096,"remaining":666}}
+      {"allowance":{"cost":111,"remaining":666}}
     )
 
-  t.context.cw.allowance.then(a => t.is(a, 666))
+  return t.context.cw
+    .allowance()
+    .then(a => {
+      console.log(a)
+      t.is(a.remaining, 666)
+      t.is(a.cost, 111)
+    })
 })
