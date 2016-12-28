@@ -1,6 +1,6 @@
 # cryptowatch
 
-API for interacting with price of bitcoint/altcoin etc 
+API for interacting with price of bitcoin/altcoin from cryptowa.ch.
 
 ### Install
 
@@ -13,5 +13,7 @@ $ npm install --save cryptowatch
 import Cryptowatch from 'cryptowatch'
 
 cw = new Cryptowatch()
-cw.allowance(a => console.log(a.remaining))
+
+cw.allowance()
+  .then(a => console.log(a.remaining))
 ```

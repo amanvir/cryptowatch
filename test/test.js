@@ -17,5 +17,5 @@ test('it gets correct allowance result', t => {
       {"allowance":{"cost":16096,"remaining":666}}
     )
 
-  t.context.cw.allowance().then(a => t.is(a, 666))
+  t.context.cw.allowance.then(a => t.is(a, 666))
 })
