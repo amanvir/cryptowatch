@@ -9,8 +9,6 @@ $ npm install --save cryptowatch
 ```
 
 ### Usage
-Once you have installed cryptowatch you need to initiate a new copy of `cryptowatch` like so:
-
 ```javascript
 import Cryptowatch from 'cryptowatch'
 
