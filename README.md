@@ -1,4 +1,4 @@
-# cryptowatch
+# cryptowatch [![CircleCI](https://circleci.com/gh/amanvir/cryptowatch.svg?style=svg)](https://circleci.com/gh/amanvir/cryptowatch)
 
 API for interacting with price of bitcoin/altcoins from cryptowa.ch.
 
