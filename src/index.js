@@ -13,17 +13,16 @@ export default class Cryptowatch {
   }
 
   price (coin, currency = 'usd', market = 'coinbase') {
-
-    //the cryptowatch api times out
-    //when incorrect params supplied
-    //todo: ask them why
+    // the cryptowatch api times out
+    // when incorrect params supplied
+    // todo: ask them why
     const options = {
-      timeout : 5000
+      timeout: 5000
     }
 
     return fetch(this.url + '/markets/' + market + '/' + coin + currency + '/price', options)
       .then(r => { return r.json() })
       .then(j => { return j.result })
-      .catch(err => { throw new TypeError('This endpoint does not exist')  })
+      .catch(err => { throw new TypeError('This endpoint does not exist') })
   }
 }

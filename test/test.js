@@ -33,10 +33,9 @@ test('it gets correct price', t => {
 })
 
 test('it throws an error when wrong params added', t => {
-
   nock('https://api.cryptowatch.com')
     .get('/markets/coinbase-is-not-real/btc-lol-jkcurrency-does-not-exist/price')
-    .delayConnection(5500) // actual timeout in code is 5s
+    .delayConnection(5500)
     .reply(500)
 
   const error = t.throws(() => {
@@ -44,4 +43,16 @@ test('it throws an error when wrong params added', t => {
   }, TypeError)
 
   t.is(error.message, 'This endpoint does not exist')
+})
+
+test('it calls correct endpoint with non-default inputs', t => {
+  nock('https://api.cryptowatch.com')
+    .get('/markets/quoine/ethusd/price')
+    .reply(200, {'result': {'price': 7.97}, 'allowance': {'cost': 1173698, 'remaining': 1902993194}})
+
+  return t.context.cw
+    .price('eth', 'usd', 'quoine')
+    .then(p => {
+      t.is(p.price, 7.97)
+    })
 })
