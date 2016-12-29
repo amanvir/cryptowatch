@@ -1,6 +1,6 @@
 {
   "name": "cryptowatch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "API wrapper for cryptowat.ch",
   "main": "dist/index.js",
   "scripts": {

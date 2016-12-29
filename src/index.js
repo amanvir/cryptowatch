@@ -20,7 +20,7 @@ class Cryptowatch {
       timeout: 5000
     }
 
-    return fetch(this.url + '/markets/' + market + '/' + coin + currency + '/price', options)
+    return fetch(`${this.url}/markets/${market}/${coin}${currency}/price`, options)
       .then(r => { return r.json() })
       .then(j => { return j.result })
       .catch(err => { throw new TypeError('This endpoint does not exist') })
