@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
 
-export default class Cryptowatch {
+class Cryptowatch {
 
   constructor () {
-    this.url = 'https://api.cryptowatch.com'
+    this.url = 'https://api.cryptowat.ch'
   }
 
   allowance () {
@@ -26,3 +26,5 @@ export default class Cryptowatch {
       .catch(err => { throw new TypeError('This endpoint does not exist') })
   }
 }
+
+module.exports = Cryptowatch

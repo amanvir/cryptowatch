@@ -8,7 +8,7 @@ test.beforeEach(t => {
 })
 
 test('it gets correct allowance result', t => {
-  nock('https://api.cryptowatch.com')
+  nock('https://api.cryptowat.ch/')
     .get('/')
     .reply(200, {'allowance': {'cost': 111, 'remaining': 666}})
 
@@ -21,7 +21,7 @@ test('it gets correct allowance result', t => {
 })
 
 test('it gets correct price', t => {
-  nock('https://api.cryptowatch.com')
+  nock('https://api.cryptowat.ch/')
     .get('/markets/coinbase/btcusd/price')
     .reply(200, {'result': {'price': 982.6}, 'allowance': {'cost': 884009, 'remaining': 1947776255}})
 
@@ -32,21 +32,8 @@ test('it gets correct price', t => {
     })
 })
 
-test('it throws an error when wrong params added', t => {
-  nock('https://api.cryptowatch.com')
-    .get('/markets/coinbase-is-not-real/btc-lol-jkcurrency-does-not-exist/price')
-    .delayConnection(5500)
-    .reply(500)
-
-  const error = t.throws(() => {
-    return t.context.cw.price('btc-lol-jk', 'currency-does-not-exist', 'coinbase-is-not-real')
-  }, TypeError)
-
-  t.is(error.message, 'This endpoint does not exist')
-})
-
 test('it calls correct endpoint with non-default inputs', t => {
-  nock('https://api.cryptowatch.com')
+  nock('https://api.cryptowat.ch/')
     .get('/markets/quoine/ethusd/price')
     .reply(200, {'result': {'price': 7.97}, 'allowance': {'cost': 1173698, 'remaining': 1902993194}})
 

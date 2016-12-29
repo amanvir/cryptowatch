@@ -1,6 +1,6 @@
 # cryptowatch
 
-API for interacting with price of bitcoin/altcoin from cryptowa.ch.
+API for interacting with price of bitcoin/altcoins from cryptowa.ch.
 
 ### Install
 
@@ -19,4 +19,17 @@ cw = new Cryptowatch()
 
 cw.price('btc', 'usd', 'coinbase')
   .then(p => console.log(p.price))
+```
+
+Alternatively, in ES5
+
+```javascript
+var cryptowatch = require('cryptowatch')
+
+cw = new cryptowatch()
+
+cw.price('btc', 'usd', 'coinbase')
+  .then(function(p) {
+    console.log(p.price)
+  })
 ```
