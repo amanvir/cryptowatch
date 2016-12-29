@@ -9,11 +9,14 @@ $ npm install --save cryptowatch
 ```
 
 ### Usage
+
+To get the price from coinbase for BTC in USD.
+
 ```javascript
 import Cryptowatch from 'cryptowatch'
 
 cw = new Cryptowatch()
 
-cw.allowance()
-  .then(a => console.log(a.remaining))
+cw.price('btc', 'usd', 'coinbase')
+  .then(p => console.log(p.price))
 ```
