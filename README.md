@@ -15,7 +15,7 @@ To get the price from coinbase for BTC in USD.
 ```javascript
 import Cryptowatch from 'cryptowatch'
 
-cw = new Cryptowatch()
+const cw = new Cryptowatch()
 
 cw.price('btc', 'usd', 'coinbase')
   .then(p => console.log(p.price))
