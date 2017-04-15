@@ -19,6 +19,7 @@ const cw = new Cryptowatch()
 
 cw.price('btc', 'usd', 'coinbase')
   .then(p => console.log(p.price))
+  .catch(err => console.log(err))
 ```
 
 Alternatively, in ES5
