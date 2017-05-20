@@ -33,7 +33,6 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "node-fetch": "^1.6.3",
-    "request": "^2.79.0"
+    "node-fetch": "^1.6.3"
   }
 }
