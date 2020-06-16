@@ -1,5 +1,5 @@
 version = 1
 
 [[analyzers]]
-name = "terraform"
+name = "javascript"
 enabled = true
